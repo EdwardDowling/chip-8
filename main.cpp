@@ -640,13 +640,6 @@ int main (int argc, char* argv[]) {
         }
 
 	if (*drawflag) {
-
-	    // for (int i = 0; i < DISPLAY_HEIGHT; i++) {
-	    // 	for (int j = 0; j < DISPLAY_WIDTH; j++) {
-	    // 	    cout << 1*display[i*DISPLAY_WIDTH + j];
-	    // 	}
-	    // 	cout << endl;
-	    // }
 	    
 	    for (int i = 0; i < DISPLAY_HEIGHT; i++) {
 		for (int j = 0; j < DISPLAY_WIDTH; j++) {
@@ -675,21 +668,8 @@ int main (int argc, char* argv[]) {
 	    cout << "reg[" << i << "]: " << hex << 1*registers[i] << endl; 
 	}
 	cout << "reg[I]: " << hex << *I << endl;
-	//cin.get();
-	//usleep(5000);
     }
     
     return 0;
 }
 
-/*
-  8e34
-  22d4
-  a2f2
-  fe33
-  f265
-  f129
-  6414
-  6500
-  
-*/
