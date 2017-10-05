@@ -44,6 +44,17 @@ const uint8_t font [MAX_FONT][FONT_SIZE]= {
     {0xF0, 0x80, 0xF0, 0x80, 0xF0},
     {0xF0, 0x80, 0xF0, 0x80, 0x80}
 };
+    
+const int buttons[0xF] = {
+        sf::Keyboard::Num1, sf::Keyboard::Num2
+        sf::Keyboard::Num3, sf::Keyboard::Num4
+        sf::Keyboard::Q,    sf::Keyboard::W
+        sf::Keyboard::E,    sf::Keyboard::R
+        sf::Keyboard::A,    sf::Keyboard::S
+        sf::Keyboard::D,    sf::Keyboard::F
+        sf::Keyboard::Z,    sf::Keyboard::X
+        sf::Keyboard::C,    sf::Keyboard::V
+    }
 
 uint8_t * mem = new uint8_t[MAX_MEM];
 uint8_t * registers = new uint8_t[MAX_REG];
@@ -601,23 +612,10 @@ void updateKeys () {
       7-r, F-v
     */
 
-    keyboard[0x0] = sf::Keyboard::isKeyPressed(sf::Keyboard::Num1);
-    keyboard[0x1] = sf::Keyboard::isKeyPressed(sf::Keyboard::Num2);
-    keyboard[0x2] = sf::Keyboard::isKeyPressed(sf::Keyboard::Num3);
-    keyboard[0x3] = sf::Keyboard::isKeyPressed(sf::Keyboard::Num4);
-    keyboard[0x4] = sf::Keyboard::isKeyPressed(sf::Keyboard::Q);
-    keyboard[0x5] = sf::Keyboard::isKeyPressed(sf::Keyboard::W);
-    keyboard[0x6] = sf::Keyboard::isKeyPressed(sf::Keyboard::E);
-    keyboard[0x7] = sf::Keyboard::isKeyPressed(sf::Keyboard::R);
-    keyboard[0x8] = sf::Keyboard::isKeyPressed(sf::Keyboard::A);
-    keyboard[0x9] = sf::Keyboard::isKeyPressed(sf::Keyboard::S);
-    keyboard[0xA] = sf::Keyboard::isKeyPressed(sf::Keyboard::D);
-    keyboard[0xB] = sf::Keyboard::isKeyPressed(sf::Keyboard::F);
-    keyboard[0xC] = sf::Keyboard::isKeyPressed(sf::Keyboard::Z);
-    keyboard[0xD] = sf::Keyboard::isKeyPressed(sf::Keyboard::X);
-    keyboard[0xE] = sf::Keyboard::isKeyPressed(sf::Keyboard::C);
-    keyboard[0xF] = sf::Keyboard::isKeyPressed(sf::Keyboard::V);
-       
+    for (int i = 0; i <= 0xF; i++) {
+        keyboard[i] = sf::Keyboard::isKeyPressed(buttons[i]);
+    }
+    
 }
 
 int main (int argc, char* argv[]) {
