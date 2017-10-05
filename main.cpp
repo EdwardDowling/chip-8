@@ -1,11 +1,11 @@
 
-#include <iostream>
-#include <stdlib.h>
-#include <time.h>
-#include <stdint.h>
-#include <unistd.h>
 #include <SFML/Graphics.hpp>
 #include <fstream>
+#include <iostream>
+#include <stdint.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
 
 using namespace std;
 
